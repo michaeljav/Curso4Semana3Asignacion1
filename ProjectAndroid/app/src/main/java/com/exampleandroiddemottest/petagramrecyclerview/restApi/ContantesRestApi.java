@@ -9,4 +9,8 @@ package com.exampleandroiddemottest.petagramrecyclerview.restApi;
     public final static String KEY_ACCESS_TOKEN ="?access_token=";
     public final static String KEY_GET_INFORMATION_USER ="users/self/media/recent/";
     public final static String URL_GET_INFORMATION_USER =KEY_GET_INFORMATION_USER+KEY_ACCESS_TOKEN+ACCESS_TOKEN;
+
+
+     public static final String HEROKUP_ROOT_URL="https://secure-basin-36492.herokuapp.com/";
+     public static final String HEROKUP_KEY_POST_ID_TOKEN="registrar-usuario/";
 }

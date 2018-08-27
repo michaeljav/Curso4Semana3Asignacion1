@@ -30,6 +30,10 @@ public class MascotaDeserializador  implements JsonDeserializer<MascotaResponse>
         return mascotaResponse;
     }
 
+
+    //esta variable para poderla mandar al servicio web
+    public static String idUsuarioInstagram="";
+
     private ArrayList<Mascota> deserializarMascotaDeJson(JsonArray mascotaResponseData){
         ArrayList<Mascota>  mascotas = new ArrayList<>();
 
@@ -38,6 +42,7 @@ public class MascotaDeserializador  implements JsonDeserializer<MascotaResponse>
 
             JsonObject  userJson = mascotaResponseDataObject.getAsJsonObject(JsonKeys.USER);
             String  id = userJson.get(JsonKeys.USER_ID).getAsString();
+            idUsuarioInstagram = id;
             String  nombreCompleto = userJson.get(JsonKeys.USER_FULLNAME).getAsString();
 
            // JsonObject imageJSON =  mascotaResponseDataObject.getAsJsonObject(JsonKeys.MEDIA_IMAGES);

@@ -1,6 +1,7 @@
 package com.exampleandroiddemottest.petagramrecyclerview.restApi.adapter;
 
 import com.exampleandroiddemottest.petagramrecyclerview.restApi.ContantesRestApi;
+import com.exampleandroiddemottest.petagramrecyclerview.restApi.IEndpointHeroku;
 import com.exampleandroiddemottest.petagramrecyclerview.restApi.IEndpointsApi;
 import com.exampleandroiddemottest.petagramrecyclerview.restApi.deserializador.MascotaDeserializador;
 import com.exampleandroiddemottest.petagramrecyclerview.restApi.model.MascotaResponse;
@@ -11,6 +12,16 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RestApiAdapter {
+
+    public IEndpointHeroku establecerConexionRestAPI_HEROKU(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ContantesRestApi.HEROKUP_ROOT_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                ;
+        return   retrofit.create(IEndpointHeroku.class);
+    }
+
 
     public IEndpointsApi establecerConexionRestApiInstagram(Gson gson){
 
